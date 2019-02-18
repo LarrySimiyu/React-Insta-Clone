@@ -15,7 +15,7 @@ const SearchBar = props => {
      );
 }
  
-SearchBar.PropTypes = {
+SearchBar.propTypes = {
     posts: PropTypes.arrayOf( // passing in from App.js
         PropTypes.shape({
             thumbnail: PropTypes.string,

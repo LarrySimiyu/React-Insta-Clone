@@ -26,7 +26,7 @@ class Post extends Component {
     }
 }
  
-Post.PropTypes = {
+Post.propTypes = {
     post: PropTypes.shape({
         thumbnail: PropTypes.string,
         username: PropTypes.string,

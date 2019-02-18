@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 const Comment = props => {
     return ( 
         <div>
-            <p>Hello I am a Comment</p>
+            <p>{props.username}</p>
+            <p>{props.text}</p>
         </div>
      );
 }
  
-Comment.PropTypes={
+Comment.propTypes={
     comment: PropTypes.shape({
         text: PropTypes.string,
         username: PropTypes.string

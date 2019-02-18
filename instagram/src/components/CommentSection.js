@@ -19,7 +19,7 @@ class CommentSection extends Component {
     }
 }
  
-CommentSection.PropTypes={
+CommentSection.propTypes={
     comments: PropTypes.arrayOf(
         PropTypes.shape({
             text: PropTypes.string,
