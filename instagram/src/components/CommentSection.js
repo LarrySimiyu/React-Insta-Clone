@@ -10,10 +10,16 @@ class CommentSection extends Component {
             comments: []
          }
     }
+
+    addNewComment = (e, index) => {
+
+    }
+
     render() { 
         return ( 
             <div>
                 <h1>LIST OF COMMENTS</h1>
+                <form onSubmit={this.addNewComment}>ADD NEW COMMENT</form>
             </div>
          );
     }
