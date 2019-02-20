@@ -39,7 +39,6 @@ class CommentSection extends Component {
                         placeholder='New Comment'
                         value={this.state.newComment} // value text inside of the input
                         name="comments"
-
                     />
                     <button type='submit'>Add Comment</button>
                 </form>
