@@ -9,8 +9,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      posts: [],
-      likes: 0 
+      posts: dummyData,
+      likes: 0 ,
+      searchTerm: 'philzcoffee'
      }
   }
 
@@ -30,13 +31,19 @@ class App extends Component {
         <div className='container'>
             <SearchBar />
             <section className='section-post'>
-              <Post />
+            {this.state.posts.map( post => (
+              <Post thumbnail={post.thumbnail} username={post.username} image={post.image}/>
+            ))}
+              
             </section>
-            <button onClick={this.handleLike}>LIKE</button>
             <h1>{this.state.likes} likes</h1>
+            <button onClick={this.handleLike}>LIKE</button>
+            
         </div>
      );
   }
 }
  
 export default App;
+
+

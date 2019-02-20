@@ -7,19 +7,42 @@ class CommentSection extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            comments: []
+            comments: [],
+            newComment: ''
          }
     }
 
-    addNewComment = (e, index) => {
+    addNewComment = event => { //update the comments array
+        console.log(this.state)
+        event.preventDefault(); //prevents screen from reloading
 
+        this.setState({
+            comments: [...this.state.comments, this.state.newComment], // copying this.state.comments and adding newComment to the end
+            newComment: '' 
+        })
+
+    }
+
+    handleChange = event => { //update changes in newComment string
+        this.setState({
+            newComment: event.target.value
+        })
     }
 
     render() { 
         return ( 
             <div>
-                <h1>LIST OF COMMENTS</h1>
-                <form onSubmit={this.addNewComment}>ADD NEW COMMENT</form>
+                <p>{this.state.comments}</p>
+                <form onSubmit={this.addNewComment}>
+                    <input 
+                        onChange={this.handleChange} // always going to fire an event
+                        placeholder='New Comment'
+                        value={this.state.newComment} // value text inside of the input
+                        name="comments"
+
+                    />
+                    <button type='submit'>Add Comment</button>
+                </form>
             </div>
          );
     }
