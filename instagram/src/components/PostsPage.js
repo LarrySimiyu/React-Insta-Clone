@@ -9,7 +9,7 @@ class PostPage extends Component {
     super(props);
     this.state = {
       posts: dummyData,
-      likes: 0,
+      
       filteredPosts: []
     };
   }
@@ -26,8 +26,19 @@ class PostPage extends Component {
     this.setState({ posts: dummyData });
   };
 
-  handleLike = id => {
-    
+  handleLike = timestamp => { // increment likes of the post that has that time stamp
+    console.log(timestamp); 
+        this.setState({
+            posts: [...this.state.posts.map( post => { //this.state to get reference once inside no need for this.state
+                if( post.timestamp === timestamp) {
+                    return ( {...post, likes: post.likes + 1}
+                    )
+                } else {
+                    return ( post )
+                }
+            })]
+        })
+
   };
 
   handleInputChange = e => {

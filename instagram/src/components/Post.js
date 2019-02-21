@@ -13,7 +13,8 @@ class Post extends Component { // whenever in class component this. has to be ne
     render() { 
 
         console.log(this.props)
-        const { thumbnailUrl, username, imageUrl , likes, comments} = this.props.post; // same as this.props.thumbnail and so on - destructuring 
+        const { thumbnailUrl, username, imageUrl , likes, comments, timestamp} = this.props.post; // same as this.props.thumbnail and so on - destructuring 
+            console.log(timestamp);
         return ( 
             <div>
                 <img className='user-icon' src={`${thumbnailUrl}`}/>
@@ -30,7 +31,7 @@ class Post extends Component { // whenever in class component this. has to be ne
                 })}
                 <CommentSection />
                 <h1 className='likes'>{likes}</h1>
-                <button onClick= {this.props.handleLike}>LIKES</button>
+                <button onClick={ e => this.props.handleLike(timestamp)}>LIKES</button>
                 
                 
             </div>
