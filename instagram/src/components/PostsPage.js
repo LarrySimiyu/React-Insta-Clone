@@ -91,6 +91,8 @@ class PostPage extends Component {
                     </section>
                     <h1>{this.state.likes} likes</h1>
                     <button onClick={this.handleLike}>LIKE</button>
+                    
+                
 
                 </div>
             );

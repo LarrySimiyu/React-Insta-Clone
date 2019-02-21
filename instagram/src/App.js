@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PostsPage from './components/PostsPage'
+import Authenticate from './components/Authenticate';
+import Login from './components/Login';
+
 
 class App extends Component {
 
@@ -11,6 +14,6 @@ class App extends Component {
   }
   }
  
-export default App;
+export default Authenticate(App);
 
 
