@@ -32,7 +32,12 @@ class CommentSection extends Component {
     render() { 
         return ( 
             <div>
-                <p>{this.state.comments}</p>
+                {this.state.comments.map( comment => ( //implicit return 
+                    <div>
+                        <h3>Larry</h3>
+                        <p>{comment}</p>
+                    </div>
+                ))}
                 <form onSubmit={this.addNewComment}>
                     <input 
                         onChange={this.handleChange} // always going to fire an event
